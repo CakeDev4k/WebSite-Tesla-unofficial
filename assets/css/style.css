@@ -1,37 +1,38 @@
-.image-musk{
-    height: 720px;
-    width: 720px;
-    object-fit: cover;
+*{
+  scroll-behavior: smooth;
+}
+
+.canvas3d {
+  height: 720px;
+  width: 720px;
+  margin: auto;
+  border: 1px solid #ccc;
+  background: transparent; /* Fundo transparente */
 }
 
 #card-img{
-    height: 20rem !important; 
-    object-fit: cover;
-    width: 100%;
+  height: 20rem !important; 
+  object-fit: cover;
+  width: 100%;
 }
 
 .d-block{
-    height: 90vh;
-    object-fit: cover;
+  height: 90vh;
+  object-fit: cover;
 }
 
 .custom-caption {
-    position: absolute;   /* Permite mover a legenda para uma posição específica */
-    top: 10%;               /* Move a legenda para o topo da imagem */
-    width: 100%;          /* Faz com que a legenda ocupe toda a largura da imagem */
-    padding: 20px;        /* Adiciona um espaço interno para o texto não colar na borda */
-    color: white;         /* Cor do texto */
-    text-align: center;   /* Centraliza o texto */
-  }
-  
-  .carousel-item {
-    position: relative;  /* Certifica-se de que o item do carrossel tenha posição relativa */
-  }
-
-svg{
-    color: aliceblue;
+  position: absolute; 
+  top: 10%;           
+  width: 100%;        
+  padding: 20px;      
+  color: white;      
+  text-align: center; 
 }
-
+  
+.carousel-item {
+  position: relative; 
+}
 
 
 .card-rotated {
@@ -42,9 +43,53 @@ svg{
 }
 
 .card-rotated {
-  transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
+  transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg)) scale(var(--scale,1));
 }
 
-.card:hover{
+
+.card-rotated:hover{
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.234);
+    margin: 0 10px;
+}
+
+.target {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.target-card {
+  opacity: 0;
+  transform: translateY(-50px); 
+}
+
+.card.hidden {
+  display: none;
+  pointer-events: none; 
+}
+
+.card.active{
+  width: 100% !important;
+}
+
+.card.active > #card-img{
+  height: 100% !important;
+}
+
+.card.active > .card-body{
+  display: none;
+}
+
+.product-description {
+  display: none;
+  padding: 20px;
+  border-top: 2px solid #007bff;
+  background: #f9f9f9;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-description.active {
+  display: block;
 }

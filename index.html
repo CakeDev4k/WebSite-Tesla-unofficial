@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <title>Site Brabo</title>
@@ -14,17 +15,23 @@
 
     <nav class="navbar navbar-expand-lg bg-light position-fixed w-100" style="z-index: 10;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="position-absolute">
+            <a class="navbar-brand m-0 position-relative" href="#"><img src="./assets/images/tesla-text.png" style="height: 10px;" alt=""></a>
+            
+          </div>
+          <div class="collapse navbar-collapse w-100 d-flex justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#scrollspyHeading1">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#scrollspyHeading2">About us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#scrollspyHeading3">Cards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading4">Login</a>
               </li>
             </ul>
           </div>
@@ -33,74 +40,91 @@
 
       <!--Carousel Sessão-->
 
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <section id="scrollspyHeading1">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/images/car-1.png" class="d-block w-100" alt="...">
+              <div class=" d-none d-md-block custom-caption">
+                <h2>Model Y</h5>
+                <p>0% APR Available
+                  Lease Starting at $299/mo1
+                  
+                  Order Now
+                  Learn </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/images/car-2.png" class="d-block w-100" alt="...">
+              <div class=" d-none d-md-block custom-caption">
+                <h2>Model 3</h5>
+                <p>0% APR Available
+                  Lease Starting at $299/mo2</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/images/car-3.png" class="d-block w-100" alt="...">
+              <div class=" d-none d-md-block custom-caption">
+                <img src="./assets/images/cybertruck-640w.webp" alt="">
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./assets/images/car-1.png" class="d-block w-100" alt="...">
-            <div class=" d-none d-md-block custom-caption">
-              <h2>Model Y</h5>
-              <p>0% APR Available
-                Lease Starting at $299/mo1
-                
-                Order Now
-                Learn </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./assets/images/car-2.png" class="d-block w-100" alt="...">
-            <div class=" d-none d-md-block custom-caption">
-              <h2>Model 3</h5>
-              <p>0% APR Available
-                Lease Starting at $299/mo2</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./assets/images/car-3.png" class="d-block w-100" alt="...">
-            <div class=" d-none d-md-block custom-caption">
-              <img src="./assets/images/cybertruck-640w.webp" alt="">
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+      </section>
 
       <!--Quem somos sessão-->
 
-      <section class="p-5 d-flex justify-content-between" >
-        <figure>
-            <img src="./assets/images/somos.jpg" class="image-musk">
-        </figure>
-        <div class="p-5">
-            <h1 class="w-100 d-flex justify-content-center">Quem Somos</h1>
-            <h2 class="fw-light">
+      <section class="p-5 d-flex justify-content-between" id="scrollspyHeading2" >
+        <div class="w-50">
+          <canvas id="canvas3d" ></canvas>
+        </div>
+        <div class="p-5 w-50">
+            <h1 class="w-100 d-flex justify-content-center target">Quem Somos</h1>
+            <h2 class="fw-light target">
                 A Tesla é uma empresa líder em inovação no setor de veículos elétricos e soluções de energia sustentável. Fundada em 2003, tem como missão acelerar a transição global para a energia limpa. A Tesla é conhecida por seus carros elétricos de alto desempenho, como os modelos Model S, Model 3, Model X e Model Y, além de suas tecnologias de baterias e energia solar. A empresa também desenvolve infraestrutura de recarga rápida e armazena energia por meio de seus produtos como o Powerwall. Seu compromisso com a sustentabilidade e inovação a coloca na vanguarda de um futuro mais verde e eficiente.</h2>
         </div>
       </section>
 
       <!--Cards Carros-->
 
-      <section>
-        <div class="d-flex p-5 justify-content-center">
-            <div class="card card-rotated m-3" style="width: 18rem;">
+      <section id="scrollspyHeading3">
+        <div class="d-flex p-5 justify-content-center target-card">
+            <div class="card card-rotated m-3" data-description="
+
+            O Wall Connector Color Matched Faceplate é um acessório premium projetado para complementar o design do Tesla Wall Connector, oferecendo personalização e estilo para os carregadores domésticos de veículos elétricos. Ele é produzido com materiais de alta qualidade, compatível com a estética minimalista da marca Tesla, garantindo durabilidade e um acabamento sofisticado. </br> </br>
+
+            Essa faceplate está disponível em uma variedade de cores para combinar com diferentes ambientes, como garagens, fachadas residenciais ou espaços comerciais. A instalação é prática, permitindo que os usuários substituam facilmente a placa padrão do Wall Connector sem comprometer sua funcionalidade ou desempenho. </br> </br>
+
+            Combinando estética e praticidade, o Color Matched Faceplate é uma excelente opção para quem busca unir funcionalidade e personalização no carregamento do seu veículo elétrico. Ideal para usuários que valorizam detalhes refinados em seus equipamentos domésticos.
+            
+            " style="width: 18rem;">
                 <img src="./assets/images/card-1.avif" class="card-img-top" id="card-img" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Wall Connector Color Matched Faceplate</h5>
-
                 </div>
             </div>
-            <div class="card card-rotated m-3" style="width: 18rem;">
+            <div class="card card-rotated m-3" style="width: 18rem;" data-description="
+
+            Os Model Y All-Weather Interior Liners são tapetes personalizados e duráveis projetados para proteger o interior do Tesla Model Y contra sujeira, líquidos e desgaste diário. Feitos com materiais de alta qualidade e resistentes à água, esses revestimentos oferecem uma proteção completa para o piso do veículo, sendo ideais para climas adversos ou para quem transporta equipamentos e objetos que possam causar danos ao interior. </br> </br>
+
+            Esses liners apresentam um design sob medida que se ajusta perfeitamente ao espaço interno do Model Y, incluindo áreas como os pisos dianteiro e traseiro, bem como o porta-malas. Seu acabamento texturizado oferece uma estética elegante e antiderrapante, garantindo segurança e conforto para os ocupantes. </br> </br>
+
+            Fáceis de limpar e projetados para suportar o uso intenso, os **All-Weather Interior Liners** são indispensáveis para proprietários que buscam manter o interior do Model Y impecável enquanto enfrentam o dia a dia com praticidade e estilo.
+            
+            ">
                 <img src="./assets/images/card-2.avif" class="card-img-top" id="card-img"  alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Model Y All-Weather Interior Liners</h5>
@@ -108,7 +132,15 @@
                   
                 </div>
             </div>
-            <div class="card card-rotated m-3" style="width: 18rem;">
+            <div class="card card-rotated m-3" style="width: 18rem;" data-description="
+
+            O Model 3/Y Air Filter é um componente essencial para manter a qualidade do ar no interior dos Tesla Model 3 e Model Y. Projetado para capturar partículas finas, poeira, pólen e outros contaminantes do ar externo, ele ajuda a proporcionar um ambiente mais saudável e confortável para os ocupantes do veículo. </br> </br>
+
+            Este filtro de alta eficiência utiliza várias camadas de materiais avançados, incluindo carvão ativado, que ajuda a neutralizar odores e reduzir a presença de gases nocivos, como óxidos de nitrogênio. Ele é especialmente útil em áreas urbanas ou industriais, onde a qualidade do ar externo pode ser comprometida. </br> </br>
+
+            O filtro é fácil de substituir, seguindo as diretrizes do manual do proprietário, e deve ser trocado regularmente para manter seu desempenho ideal. Ele é uma parte essencial do sistema de climatização e ventilação, garantindo que o interior do veículo permaneça fresco e livre de poluentes.
+            
+            ">
                 <img src="./assets/images/card-3.avif" class="card-img-top" id="card-img"  alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Model 3/Y Air Filter</h5>
@@ -116,7 +148,15 @@
 
                 </div>
             </div>
-            <div class="card card-rotated m-3" style="width: 18rem;">
+            <div class="card card-rotated m-3" style="width: 18rem;" data-description="
+
+            O Cable Organizer é um acessório prático e eficiente para o Tesla, projetado para ajudar os proprietários a manterem os cabos do veículo, como o cabo de carregamento do Wall Connector, organizados e livres de emaranhados. Com um design simples e funcional, ele facilita o armazenamento e o acesso rápido aos cabos, mantendo-os bem arrumados e fora do caminho quando não estiverem em uso. </br> </br>
+
+            Feito com materiais duráveis e resistentes, o Cable Organizer pode ser instalado em diferentes áreas, como nas laterais da garagem ou próximo ao ponto de carregamento, proporcionando uma solução segura e acessível para o armazenamento do cabo. Ele também ajuda a prolongar a vida útil dos cabos, evitando dobras excessivas e danos causados pelo uso inadequado. </br> </br>
+            
+            Além de otimizar o espaço, esse acessório oferece uma aparência mais limpa e organizada, combinando perfeitamente com o design minimalista dos veículos Tesla, tornando o processo de carregamento mais prático e agradável para o usuário.
+            
+            ">
                 <img src="./assets/images/card-4.avif" class="card-img-top" id="card-img"  alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Cable Organizer</h5>
@@ -124,25 +164,37 @@
 
                 </div>
             </div>
-            <div class="card card-rotated m-3" style="width: 18rem;">
+            <div class="card card-rotated m-3" style="width: 18rem;" data-description="
+
+            Os Model Y and 2017-2023 Model 3 Center Console Trays são bandejas organizadoras projetadas para melhorar a funcionalidade e o armazenamento dentro do console central dos modelos Tesla Model Y e Model 3 (de 2017 a 2023). Essas bandejas são feitas sob medida para se ajustarem perfeitamente ao espaço do console, proporcionando compartimentos adicionais para itens pequenos e acessórios. </br> </br>
+
+            Fabricadas com materiais de alta qualidade, como plástico resistente e acabamentos que combinam com o interior minimalista dos veículos Tesla, essas bandejas são ideais para organizar itens como telefones, carteiras, chaves e outros objetos essenciais, mantendo o ambiente do carro limpo e organizado. Além disso, elas ajudam a evitar que esses itens deslizem ou se movam enquanto o veículo está em movimento. </br> </br>
+            
+            A instalação das bandejas é simples, sem a necessidade de ferramentas ou modificações no carro, e elas podem ser removidas facilmente para limpeza. Essas bandejas são uma excelente solução para quem busca um armazenamento adicional e mais organizado no interior do seu Tesla Model 3 ou Model Y, maximizando o uso do console central de forma prática e funcional.
+            
+            ">
               <img src="./assets/images/card-5.avif" class="card-img-top" id="card-img"  alt="...">
               <div class="card-body">
                 <h5 class="card-title">Model Y and 2017-2023 | Model 3 Center Console Trays</h5>
 
               </div>
           </div>
+          <div class="product-description" id="product-description">
+            <h4 id="description-title"></h4>
+            <p id="description-text"></p>
+          </div>
         </div>
       </section>
 
-      <section>
-        <form>
+      <section class="w-100 d-flex justify-content-center" id="scrollspyHeading4">
+        <form class="w-50" action="./login.html" >
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <label for="exampleInputEmail1" class="form-label">Email</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <label for="exampleInputPassword1" class="form-label">Senha</label>
               <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="mb-3 form-check">
@@ -153,23 +205,23 @@
           </form>
       </section>
 
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center p-3 my-4 border-top">
         <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
     
         <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
           <img src="./assets/images/logo-tesla.png" style="height: 25px; width: 25px;" alt="">
         </a>
     
-        <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-        </ul>
       </footer>
 </body>
-<script src="./assets/js/script.js"></script>
+<!--Carregou gsap-->  
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!--Carregar Bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+<script type="module" src="./assets/js/script.js"></script>
+
 </html>
