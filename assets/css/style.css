@@ -3,9 +3,48 @@
 }
 
 .about-us{
+  position: relative;
   display: flex;
   justify-content: center;
   padding: 20px;
+}
+
+.model-3d{
+  object-fit: cover;
+  position: relative;
+  width: 50%;
+  z-index: 10;
+}
+
+.background-about{
+  position: absolute;
+  width: 100%;
+  top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 200px;
+  font-weight: 900;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  z-index: 0;
+  animation: moveUpDown 4s ease-in-out infinite; /* Animação suave e em loop */
+}
+
+/* Definição da animação */
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-10%); /* Começa acima do container */
+  }
+  50% {
+    transform: translateY(10%); /* Move para abaixo do container */
+  }
+  100% {
+    transform: translateY(-10%); /* Retorna ao início */
+  }
 }
 
 .description-about{
@@ -13,11 +52,9 @@
   width: 50%;
 }
 
-.canvas3d {
-  height: 720px;
-  width: 720px;
-  margin: auto;
-  border: 1px solid #ccc;
+#canvas3d {
+  position: relative;
+  z-index: 100;
   background: transparent; /* Fundo transparente */
 }
 
@@ -120,7 +157,7 @@
     display: block;
   }
 
-  #model-3d{
+  .model-3d{
     display: none !important;
   }
 
