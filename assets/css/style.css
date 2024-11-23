@@ -2,6 +2,17 @@
   scroll-behavior: smooth;
 }
 
+.about-us{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.description-about{
+  padding: 20px;
+  width: 50%;
+}
+
 .canvas3d {
   height: 720px;
   width: 720px;
@@ -34,6 +45,11 @@
   position: relative; 
 }
 
+.card-section{
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
 
 .card-rotated {
   perspective: 1000px;
@@ -92,4 +108,37 @@
 
 .product-description.active {
   display: block;
+}
+
+@media (max-width: 990px) {
+  /* Estilos para largura exatamente 982px */
+  #navbarNav{
+    display: none !important;
+  }
+
+  .about-us{
+    display: block;
+  }
+
+  #model-3d{
+    display: none !important;
+  }
+
+  .description-about{
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-section{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-rotated{
+    transform: none;
+  }
 }

@@ -101,6 +101,7 @@ gsap.fromTo(
 
           // Marca o card clicado como ativo
           card.classList.add('active');
+          card.scrollIntoView();
 
           // Atualiza o conteúdo da div de descrição
           const title = card.querySelector('.card-title').textContent;
