@@ -4,6 +4,31 @@ const canvas = document.getElementById('canvas3d');
 const app = new Application(canvas);
 app.load('https://prod.spline.design/p8MVOAhrGFHxby46/scene.splinecode');
 
+// Toggle Menu
+const buttonLogin = document.querySelectorAll("#button-login")
+const navLogin = document.getElementById("nav-login")
+let toogleLogin = false
+
+buttonLogin.forEach(button => {
+  button.addEventListener("click", () => {
+    toogleLogin = !toogleLogin
+  
+    if(toogleLogin){
+      navLogin.classList.add("active")
+      navLogin.classList.remove("off")
+    }else{
+      navLogin.classList.add("off")
+
+      setTimeout(function() {
+        elemento.style.display = 'none';
+        navLogin.classList.remove("active")
+      }, 1500); // Espera o tempo da animação (500ms) antes de esconder o elemento
+
+    }
+  })
+})
+
+
 // Rotação card
 
 const cards = document.querySelectorAll(".card-rotated");
@@ -77,41 +102,42 @@ gsap.fromTo(
     }
 );
 
-    // Seleciona todos os cards
-    const descriptionDiv = document.getElementById('product-description');
-    const descriptionTitle = document.getElementById('description-title');
-    const descriptionText = document.getElementById('description-text');
-    let activeCard = null; // Referência ao card ativo
+// Seleciona todos os cards
+const descriptionDiv = document.getElementById('product-description');
+const descriptionTitle = document.getElementById('description-title');
+const descriptionText = document.getElementById('description-text');
+let activeCard = null; // Referência ao card ativo
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        if (activeCard === card) {
-          // Se o card clicado já está ativo, restaura tudo
-          cards.forEach(otherCard => otherCard.classList.remove('hidden', 'active'));
-          descriptionDiv.classList.remove('active'); // Esconde a descrição
-          activeCard = null; // Reseta o card ativo
-        } else {
-          // Oculta todos os outros cards
-          cards.forEach(otherCard => {
-            if (otherCard !== card) {
-              otherCard.classList.add('hidden');
-              otherCard.classList.remove('active');
-            }
-          });
-
-          // Marca o card clicado como ativo
-          card.classList.add('active');
-          card.scrollIntoView();
-
-          // Atualiza o conteúdo da div de descrição
-          const title = card.querySelector('.card-title').textContent;
-          const description = card.getAttribute('data-description');
-          descriptionTitle.innerHTML = title;
-          descriptionText.innerHTML = description;
-
-          // Exibe a div de descrição
-          descriptionDiv.classList.add('active');
-          activeCard = card; // Define o card ativo
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    if (activeCard === card) {
+      // Se o card clicado já está ativo, restaura tudo
+      cards.forEach(otherCard => otherCard.classList.remove('hidden', 'active'));
+      descriptionDiv.classList.remove('active'); // Esconde a descrição
+      activeCard = null; // Reseta o card ativo
+    } else {
+      // Oculta todos os outros cards
+      cards.forEach(otherCard => {
+        if (otherCard !== card) {
+          otherCard.classList.add('hidden');
+          otherCard.classList.remove('active');
         }
       });
-    });
+
+      // Marca o card clicado como ativo
+      card.classList.add('active');
+      card.scrollIntoView();
+
+      // Atualiza o conteúdo da div de descrição
+      const title = card.querySelector('.card-title').textContent;
+      const description = card.getAttribute('data-description');
+      descriptionTitle.innerHTML = title;
+      descriptionText.innerHTML = description;
+
+      // Exibe a div de descrição
+      descriptionDiv.classList.add('active');
+      activeCard = card; // Define o card ativo
+    }
+  });
+});
+

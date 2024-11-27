@@ -2,6 +2,83 @@
   scroll-behavior: smooth;
 }
 
+.background-login{
+  visibility: hidden;
+  display: none;
+}
+
+.off{
+  animation: fade-down 0.3s ease-in-out forwards !important;
+}
+
+@keyframes fade-down {
+  to{
+    scale: 0;
+    opacity: 0;
+    display: none;
+  }
+  from{
+    scale: 1;
+    opacity: 1;
+  }
+
+}
+
+.background-login.active{
+  visibility: visible;
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  animation: fade-up 0.3s ease-in-out forwards;
+}
+
+.login{
+  position: relative;    /* Fixa o elemento na tela */
+  z-index: 100;
+  top: 50%;            /* Coloca o topo do elemento no meio da tela */
+  left: 50%;           /* Coloca a esquerda do elemento no meio da tela */
+  transform: translate(-50%, -50%); /* Ajusta o elemento para ser perfeitamente centralizado */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+}
+
+.close-nav{
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.close-nav span{
+  font-size: 30px;
+  border-radius: 100%;
+  color: rgb(0, 0, 0);
+}
+
+@keyframes fade-up {
+  from{
+    scale: 0;
+    opacity: 0;
+  }
+  to{
+    scale: 1;
+    opacity: 1;
+  }
+
+}
+
 .about-us{
   position: relative;
   display: flex;
@@ -13,7 +90,7 @@
   object-fit: cover;
   position: relative;
   width: 50%;
-  z-index: 10;
+  z-index: 0;
 }
 
 .background-about{
@@ -28,7 +105,7 @@
   font-size: 200px;
   font-weight: 900;
   color: white;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   z-index: 0;
   animation: moveUpDown 4s ease-in-out infinite; /* Animação suave e em loop */
@@ -58,7 +135,13 @@
   background: transparent; /* Fundo transparente */
 }
 
+.card{
+  border: none !important;
+  border-radius: 2rem !important;
+}
+
 #card-img{
+  border-radius: 2rem 2rem 0 0 !important;
   height: 20rem !important; 
   object-fit: cover;
   width: 100%;
@@ -121,7 +204,7 @@
 }
 
 .card.active{
-  width: 100% !important;
+  width: 40% !important;
 }
 
 .card.active > #card-img{
