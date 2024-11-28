@@ -2,6 +2,10 @@
   scroll-behavior: smooth;
 }
 
+.navbar-toggler{
+  right: 0;
+}
+
 .background-login{
   visibility: hidden;
   display: none;
@@ -57,7 +61,7 @@
 .close-nav{
   padding: 10px;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
 }
 
@@ -230,6 +234,13 @@
   display: block;
 }
 
+.btn{
+  margin: 0 10px;
+  width: 7rem;
+  height: 2.5rem;
+}
+
+
 @media (max-width: 990px) {
   /* Estilos para largura exatamente 982px */
   #navbarNav{
@@ -261,4 +272,26 @@
   .card-rotated{
     transform: none;
   }
+}
+
+/*Sessão dark mode*/
+
+/* Tema escuro */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.navbar.dark-theme {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+.navbar.dark-theme.nav-link{
+  color: #ffffff !important;
+}
+
+.card-section.dark-theme > .card{
+  background-color: #121212;
+  color: aliceblue;
 }

@@ -141,3 +141,24 @@ cards.forEach(card => {
   });
 });
 
+// Dark Mode Script
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeChange = document.querySelectorAll("#themeToggle")
+
+themeToggle.addEventListener("click", () => {
+  // Alterna a classe do corpo para o tema escuro
+  document.body.classList.toggle("dark-theme");
+
+  themeChange.forEach((theme) =>  {
+    theme.classList.toggle("dark-theme");
+  })
+
+
+  // Ajusta o texto do botão
+  if (document.body.classList.contains("dark-theme")) {
+    themeToggle.textContent = "Light Mode";
+  } else {
+    themeToggle.textContent = "Dark Mode";
+  }
+});
