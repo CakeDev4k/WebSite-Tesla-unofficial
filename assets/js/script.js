@@ -4,6 +4,17 @@ const canvas = document.getElementById('canvas3d');
 const app = new Application(canvas);
 app.load('https://prod.spline.design/p8MVOAhrGFHxby46/scene.splinecode');
 
+// Theme Toggle
+
+const theme = document.getElementById("theme");
+const navbar = document.getElementById("navbar")
+
+theme.addEventListener("click", () => {
+  document.body.classList.toggle("dark")
+  navbar.classList.toggle("bg-light")
+  navbar.classList.toggle("bg-dark")
+})
+
 // Toggle Menu
 const buttonLogin = document.querySelectorAll("#button-login")
 const navLogin = document.getElementById("nav-login")
@@ -26,6 +37,21 @@ buttonLogin.forEach(button => {
 
     }
   })
+})
+
+const navToggle = document.querySelectorAll("#nav-toggle");
+const loginSection = document.querySelector(".login");
+const signInSection = document.querySelector(".sing-in");
+
+// Adicionar evento ao botão de alternância
+navToggle.forEach((nav) => {
+  nav.addEventListener("click", function (event) {
+    event.preventDefault(); // Evitar comportamento padrão do link
+    console.log("baah")
+    // Alternar a classe "active" entre Login e Sign In
+    loginSection.classList.toggle("active");
+    signInSection.classList.toggle("active");
+  });
 })
 
 
@@ -141,24 +167,3 @@ cards.forEach(card => {
   });
 });
 
-// Dark Mode Script
-
-const themeToggle = document.getElementById("theme-toggle");
-const themeChange = document.querySelectorAll("#themeToggle")
-
-themeToggle.addEventListener("click", () => {
-  // Alterna a classe do corpo para o tema escuro
-  document.body.classList.toggle("dark-theme");
-
-  themeChange.forEach((theme) =>  {
-    theme.classList.toggle("dark-theme");
-  })
-
-
-  // Ajusta o texto do botão
-  if (document.body.classList.contains("dark-theme")) {
-    themeToggle.textContent = "Light Mode";
-  } else {
-    themeToggle.textContent = "Dark Mode";
-  }
-});

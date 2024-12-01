@@ -1,110 +1,189 @@
-*{
+:root{
+  --primary: #000000;
+  --secondary: #000;
+  --background: #ffffff;
+  --logo-theme: url("../images/tesla-dark.png");
+}
+
+/* Configurações globais */
+* {
   scroll-behavior: smooth;
 }
 
-.navbar-toggler{
-  right: 0;
-}
-
-.background-login{
-  visibility: hidden;
-  display: none;
-}
-
-.off{
-  animation: fade-down 0.3s ease-in-out forwards !important;
-}
-
+/* Estilos de animação */
 @keyframes fade-down {
-  to{
+  from {
+    scale: 1;
+    opacity: 1;
+  }
+  to {
     scale: 0;
     opacity: 0;
     display: none;
   }
-  from{
+}
+
+@keyframes fade-up {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
     scale: 1;
     opacity: 1;
   }
-
 }
 
-.background-login.active{
+@keyframes transition-nav{
+  from {
+    display: none;
+    transform: translate(-50%, -20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+body{
+  background-color: var(--background) !important;
+  color: var(--primary) !important;
+}
+
+body.dark{
+  --primary: #ffffff;
+  --background: #000000;
+  --logo-theme: url("../images/tesla-light.png");
+}
+
+svg{
+  fill: var(--primary);
+}
+
+a{
+  text-decoration: none !important;
+  color: var(--primary) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--primary) !important; /* Texto branco nos links */
+}
+
+.nav-logo{
+  content: var(--logo-theme)
+}
+
+.icons-nav svg{
+  display: flex;
+  margin: 0 10px;
+}
+
+/* Estilos de login */
+.background-login {
+  visibility: hidden;
+  display: none;
+}
+
+.background-login.active {
   visibility: visible;
   display: flex;
   position: fixed;
   left: 0;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.5);
   height: 100vh;
   width: 100vw;
   z-index: 100;
   animation: fade-up 0.3s ease-in-out forwards;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.login{
-  position: relative;    /* Fixa o elemento na tela */
+.login, .sing-in{
+  display: none;
+}
+
+.login.active,  .sing-in.active{
+  position: relative;
   z-index: 100;
-  top: 50%;            /* Coloca o topo do elemento no meio da tela */
-  left: 50%;           /* Coloca a esquerda do elemento no meio da tela */
-  transform: translate(-50%, -50%); /* Ajusta o elemento para ser perfeitamente centralizado */
+  top: 50%;
+  left: 50%;
   padding: 10px;
   border-radius: 10px;
-  background-color: aliceblue;
+  background-color: var(--background);
+  color: var(--primary);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   width: 50%;
-  height: 50%;
+  height: 75%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: transition-nav 0.3s 0.2s ease-in-out forwards;
 }
 
-.close-nav{
-  padding: 10px;
+.nav-toggle{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.off {
+  animation: fade-down 0.3s ease-in-out forwards !important;
+}
+
+.close-nav {
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
+  padding: 10px;
 }
 
-.close-nav span{
+.close-nav span {
   font-size: 30px;
   border-radius: 100%;
   color: rgb(0, 0, 0);
 }
 
-@keyframes fade-up {
-  from{
-    scale: 0;
-    opacity: 0;
-  }
-  to{
-    scale: 1;
-    opacity: 1;
-  }
+/* Carousel */
 
+body.dark .carousel{
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
-.about-us{
+/* Sobre nós */
+.about-us {
   position: relative;
   display: flex;
   justify-content: center;
   padding: 20px;
 }
 
-.model-3d{
-  object-fit: cover;
+.model-3d {
   position: relative;
   width: 50%;
   z-index: 0;
+  object-fit: cover;
 }
 
-.background-about{
+.background-about {
   position: absolute;
-  width: 100%;
   top: 5%;
-  margin-left: auto;
-  margin-right: auto;
   left: 0;
   right: 0;
+  margin: 0 auto;
   text-align: center;
   font-size: 200px;
   font-weight: 900;
@@ -112,23 +191,10 @@
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   z-index: 0;
-  animation: moveUpDown 4s ease-in-out infinite; /* Animação suave e em loop */
+  animation: moveUpDown 4s ease-in-out infinite;
 }
 
-/* Definição da animação */
-@keyframes moveUpDown {
-  0% {
-    transform: translateY(-10%); /* Começa acima do container */
-  }
-  50% {
-    transform: translateY(10%); /* Move para abaixo do container */
-  }
-  100% {
-    transform: translateY(-10%); /* Retorna ao início */
-  }
-}
-
-.description-about{
+.description-about {
   padding: 20px;
   width: 50%;
 }
@@ -136,96 +202,70 @@
 #canvas3d {
   position: relative;
   z-index: 100;
-  background: transparent; /* Fundo transparente */
+  background: transparent;
 }
 
-.card{
+/* Cartões */
+.card {
   border: none !important;
   border-radius: 2rem !important;
 }
 
-#card-img{
-  border-radius: 2rem 2rem 0 0 !important;
-  height: 20rem !important; 
+#card-img {
+  border-radius: 2rem !important;
+  height: 20rem !important;
   object-fit: cover;
   width: 100%;
 }
 
-.d-block{
-  height: 90vh;
-  object-fit: cover;
-}
-
-.custom-caption {
-  position: absolute; 
-  top: 10%;           
-  width: 100%;        
-  padding: 20px;      
-  color: white;      
-  text-align: center; 
-}
-  
-.carousel-item {
-  position: relative; 
-}
-
-.card-section{
+.card-section {
   display: flex;
   justify-content: center;
   padding: 5rem;
 }
 
 .card-rotated {
-  perspective: 1000px;
-  transition: all 0.1s ease-in-out;
   transform-style: preserve-3d;
+  transition: all 0.1s ease-in-out;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-}
-
-.card-rotated {
   transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg)) scale(var(--scale,1));
 }
 
-
-.card-rotated:hover{
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.234);
-    margin: 0 10px;
-}
-
-.target {
-  opacity: 0;
-  transform: translateY(-50px);
-}
-
-.target-card {
-  opacity: 0;
-  transform: translateY(-50px); 
+.card-rotated:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.234);
+  margin: 0 10px;
 }
 
 .card.hidden {
   display: none;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
-.card.active{
+.card.active {
   width: 40% !important;
 }
 
-.card.active > #card-img{
+.card.active > #card-img {
   height: 100% !important;
 }
 
-.card.active > .card-body{
+.card.active > .card-body {
   display: none;
+}
+
+.card-body{
+  background-color: var(--background);
+  color: var(--primary) !important;
 }
 
 .product-description {
   display: none;
   padding: 20px;
-  border-top: 2px solid #007bff;
   background: #f9f9f9;
+  color: var(--secondary) !important; 
   margin: 20px auto;
   width: 80%;
+  border-top: 2px solid #007bff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -234,34 +274,46 @@
   display: block;
 }
 
-.btn{
-  margin: 0 10px;
-  width: 7rem;
-  height: 2.5rem;
+/* Carousel */
+.carousel-item {
+  position: relative;
 }
 
+.d-block {
+  height: 90vh;
+  object-fit: cover;
+}
 
+.custom-caption {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Responsividade */
 @media (max-width: 990px) {
-  /* Estilos para largura exatamente 982px */
-  #navbarNav{
+  #navbarNav {
     display: none !important;
   }
 
-  .about-us{
+  .about-us {
     display: block;
   }
 
-  .model-3d{
+  .model-3d {
     display: none !important;
   }
 
-  .description-about{
+  .description-about {
     padding: 5px;
     width: 100%;
     text-align: center;
   }
 
-  .card-section{
+  .card-section {
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -269,29 +321,12 @@
     align-items: center;
   }
 
-  .card-rotated{
+  .card-rotated {
     transform: none;
   }
-}
 
-/*Sessão dark mode*/
-
-/* Tema escuro */
-body.dark-theme {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-.navbar.dark-theme {
-  background-color: #333333 !important;
-  color: #ffffff !important;
-}
-
-.navbar.dark-theme.nav-link{
-  color: #ffffff !important;
-}
-
-.card-section.dark-theme > .card{
-  background-color: #121212;
-  color: aliceblue;
+  .login.active,  .sing-in.active{
+    width: 100%;
+    height: 100%;
+  }
 }
