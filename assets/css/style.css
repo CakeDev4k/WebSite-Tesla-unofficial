@@ -187,9 +187,9 @@ body.dark .carousel{
   text-align: center;
   font-size: 200px;
   font-weight: 900;
-  color: white;
+  color: rgba(255, 255, 255, 0);
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--primary);
   z-index: 0;
   animation: moveUpDown 4s ease-in-out infinite;
 }
